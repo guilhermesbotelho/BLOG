@@ -1,0 +1,9 @@
+{{define "countLikes"}}
+{{range .}}
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        A postagem possui {{.Count}} curtidas.
+    </div>
+</div>
+{{end}}
+{{end}}

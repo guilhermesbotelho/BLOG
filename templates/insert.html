@@ -1,0 +1,35 @@
+{{define "InsertPost"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Adicionar nova postagem</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">Nova postagem</h1>
+        </div>
+    </div>
+    <form method="POST" action="insert">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="blogger">Blogger:</label>
+                    <input type="text" name="blogger" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="post">Post:</label>
+            <textarea class="form-control" name="post" id="post" rows="3"></textarea>
+          </div>
+        <button type="submit" value="salvar" class="btn btn-success">Salvar</button>
+        <input type="button" value="Voltar" class="btn btn-info" onclick="history.back()">
+    </form>
+</body>
+</html>
+{{end}}

@@ -1,0 +1,11 @@
+{{define "_commt"}}
+{{range .}}
+<div class="card w-50">
+  <div class="card-body">
+    <h5 class="card-title">Comentário de {{.UserName}}</h5>
+    <p class="card-text" >{{.Commt}}</p>
+    <a class="btn btn-danger" href="/deletcommt?id={{.IdCommt}}">Apagar comentário</a>
+  </div>
+</div>
+{{end}}
+{{end}}

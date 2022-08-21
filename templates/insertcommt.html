@@ -1,0 +1,36 @@
+{{define "InsertCommt"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Adicionar comentário</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">Comentário</h1>
+        </div>
+    </div>
+    <form method="POST" action="insertcommt">
+        <input  type="hidden" name="id" value="{{.Id}}">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" name="username" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="commt">Comentário:</label>
+            <textarea class="form-control" name="commt" id="commt" rows="3"></textarea>
+          </div>
+        <button type="submit" value="salvar" class="btn btn-success">Salvar</button>
+        <input type="button" value="Voltar" class="btn btn-info" onclick="history.back()">
+    </form>
+</body>
+</html>
+{{end}}
