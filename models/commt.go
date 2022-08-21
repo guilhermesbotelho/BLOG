@@ -44,7 +44,7 @@ func GetAllCommts(id string) []Commt {
 	return commts
 }
 
-func CreateNewCommt(username, commt string, id int) {
+func CreateNewCommt(username, commt string, id int) string {
 	db := db.ConnectDataBase()
 
 	newPostDB, err := db.Prepare("insert into commts(username, commt, id_from_post) values($1, $2, $3)")
@@ -55,9 +55,11 @@ func CreateNewCommt(username, commt string, id int) {
 	_, err = newPostDB.Exec(username, commt, id)
 	if err != nil {
 		log.Println(err.Error())
+		return err.Error()
 	}
 
 	defer db.Close()
+	return ""
 }
 
 func DeletComment(id string) {

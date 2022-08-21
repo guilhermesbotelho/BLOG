@@ -19,7 +19,12 @@ func NewCommt(w http.ResponseWriter, r *http.Request) {
 			log.Println("Erro na conversão do ID para int:", err)
 		}
 
-		models.CreateNewCommt(username, commt, idConvertToInt)
+		comment := models.CreateNewCommt(username, commt, idConvertToInt)
+		if comment != "" {
+			temp.ExecuteTemplate(w, "error", comment)
+			return
+		}
+
 	}
 
 	id := r.FormValue("id")
