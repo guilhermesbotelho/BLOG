@@ -1,15 +1,24 @@
 {{define "error"}}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erro</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Erro</title>
+    </head>
 <body>
-    <h1>{{.}}</h1>
-    <input type="button" value="Voltar" class="btn btn-info" onclick="history.back()">
+    <div class="d-flex justify-content-center">
+        <div class="card">
+            <h5 class="card-header">Erro</h5>
+            <div class="card-body">
+            <p class="card-text">{{.}}</p>
+            <input type="button" value="Voltar" class="btn btn-info" onclick="history.back()">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 {{end}}
+
